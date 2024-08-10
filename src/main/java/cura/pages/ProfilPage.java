@@ -15,19 +15,13 @@ public class ProfilPage {
         this.driver = driver;
     }
 
-    public boolean isProfilPageLoaded(){
+    public void navigateToProfile() {
+        driver.findElement(menuBtnBy).click();
+        driver.findElement(profileMenuItemBy).click();
+    }
+
+    public boolean isProfilPageLoaded() {
         return driver.findElement(logoutButtonBy).isDisplayed();
-    }
-
-    public void navigateToProfile(){
-        driver.findElement(menuBtnBy).click();
-        driver.findElement(profileMenuItemBy).click();
-    }
-
-    public void clickLogout(){
-        driver.findElement(menuBtnBy).click();
-        driver.findElement(profileMenuItemBy).click();
-        driver.findElement(logoutButtonBy).click();
     }
 
 }

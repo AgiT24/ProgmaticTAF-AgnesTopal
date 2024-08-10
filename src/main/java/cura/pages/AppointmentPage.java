@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.List;
 
 public class AppointmentPage {
     private final By facilityDropdownBy = By.id("combo_facility");
@@ -26,29 +25,30 @@ public class AppointmentPage {
     }
 
     public void applyForHospitalReadmission(Boolean apply) {
-        if(apply) {
+        if (apply) {
             WebElement applyForHospReadm = driver.findElement(hospitalReadmissionCheckboxBy);
             applyForHospReadm.click();
         }
     }
 
-    public void selectHealthCareRadio (String healthcare) {
-       WebElement healthCareRadioBtn = driver.findElement(By.id("radio_program_"+healthcare.toLowerCase()));
-       healthCareRadioBtn.click();
+    public void selectHealthCareRadio(String healthcare) {
+        WebElement healthCareRadioBtn = driver.findElement(By.id("radio_program_" + healthcare.toLowerCase()));
+        healthCareRadioBtn.click();
     }
-    public void fillDateInput (String date) {
+
+    public void fillDateInput(String date) {
         WebElement dateInput = driver.findElement(dateInputBy);
         dateInput.sendKeys(date);
     }
 
-    public void fillCommentInput (String comment) {
+    public void fillCommentInput(String comment) {
         WebElement commentInput = driver.findElement(commentInputBy);
         commentInput.sendKeys(comment);
     }
 
-    public void clickBookAppointmentBtn () {
-        WebElement bookAppoinmentBtn = driver.findElement(bookAppointmentBtnBy);
-        bookAppoinmentBtn.click();
+    public void clickBookAppointmentBtn() {
+        WebElement bookAppointmentBtn = driver.findElement(bookAppointmentBtnBy);
+        bookAppointmentBtn.click();
     }
 
 

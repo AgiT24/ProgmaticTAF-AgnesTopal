@@ -2,9 +2,7 @@ package cura.tests;
 
 import core.DriverManager;
 import cura.pages.AppointmentPage;
-import cura.pages.HomePage;
 import cura.pages.LoginPage;
-import cura.pages.ProfilPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -12,7 +10,7 @@ import org.testng.annotations.Test;
 
 public class EndToEndTest extends DriverManager {
 
-    @Test(description = "This test goes through the whole appointment making process: login, filling in form, book appointment, logout ")
+    @Test(groups = {"regression"}, description = "This test goes through the whole appointment making process: login, filling in form, book appointment, logout ")
     public void loginWithIncorrectData() {
         driver.get("https://katalon-demo-cura.herokuapp.com/profile.php#login");
         LoginPage loginPage = new LoginPage(driver);
@@ -31,7 +29,7 @@ public class EndToEndTest extends DriverManager {
         menuButton.click();
         WebElement logOutButton = driver.findElement(By.linkText("Logout"));
         logOutButton.click();
-        Assert.assertEquals(driver.getCurrentUrl(),"https://katalon-demo-cura.herokuapp.com/");
+        Assert.assertEquals(driver.getCurrentUrl(), "https://katalon-demo-cura.herokuapp.com/");
     }
 }
 

@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 
 public class HomePageTests extends DriverManager {
-    @Test
+    @Test(groups = {"regression"}, description = "check if Make Appointment button works")
     public void isMakeAppointmentClickable() {
         driver.get("https://katalon-demo-cura.herokuapp.com/");
         HomePage homePage = new HomePage(driver);

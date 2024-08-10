@@ -29,4 +29,6 @@ public class DriverManager {
         //driver.close();                         //bezárja a böngésző ablakot
         driver.quit();                            //bezárja a böngészőt és a driver példányt a memóriából
     }
+
+
 }

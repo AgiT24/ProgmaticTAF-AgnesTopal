@@ -9,8 +9,8 @@ import org.testng.annotations.Test;
 
 public class AppointmentPageTests extends DriverManager {
 
-    @Test(groups = {"regression"}, description = "check if Make Appointment button works")
-    public void isMakeAppointmentClickable() {
+    @Test(groups = {"regression"}, description = "Fills in appointment booiking form and checks if the booking was confirmed")
+    public void bookAppointment() {
         driver.get("https://katalon-demo-cura.herokuapp.com/#appointment");
         login();
         AppointmentPage appointmentPage = new AppointmentPage(driver);
@@ -24,9 +24,9 @@ public class AppointmentPageTests extends DriverManager {
 
     }
 
-    public void login(){
+    public void login() {
 
-        HomePage homePage=new HomePage(driver);
+        HomePage homePage = new HomePage(driver);
         homePage.clickMakeAppointment();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.fillUserNameInput("John Doe");
