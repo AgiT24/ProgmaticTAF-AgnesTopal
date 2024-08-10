@@ -14,20 +14,26 @@ public class LoginPage {
         this.driver = driver;
     }
 
-    public void fillUserNameInput(String username) {
+
+    public void login(String username, String password) {
+        driver.get("https://katalon-demo-cura.herokuapp.com/profile.php#login");
+        System.out.println("Filling username input field with: "+username);
         WebElement usernameInputField = driver.findElement(usernameInputBy);
         usernameInputField.sendKeys(username);
-    }
-
-    public void fillPasswordInput(String password) {
+        System.out.println("Filling password input field with: "+password);
         WebElement passwordInputField = driver.findElement(passwordInputBy);
         passwordInputField.sendKeys(password);
-    }
-
-    public void clickLogin() {
+        System.out.println("Clicking on Login button");
         WebElement loginButton = driver.findElement(loginButtonBy);
         loginButton.click();
     }
 
-
+    public void logout() {
+        System.out.println("Opening Menu");
+        WebElement menuButton = driver.findElement(By.id("menu-toggle"));
+        menuButton.click();
+        System.out.println("Clicking on Logout");
+        WebElement logOutButton = driver.findElement(By.linkText("Logout"));
+        logOutButton.click();
+    }
 }

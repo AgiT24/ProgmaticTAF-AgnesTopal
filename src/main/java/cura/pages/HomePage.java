@@ -14,6 +14,7 @@ public class HomePage {
 
     public void clickMakeAppointment() {
         WebElement makeAppointmentButton = driver.findElement(makeAppointmnetButtonBy);
+        System.out.println("Clicking on Make Appointment button");
         makeAppointmentButton.click();
     }
 }

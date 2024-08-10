@@ -20,11 +20,13 @@ public class AppointmentPage {
 
 
     public void selectFacility(String facility) {
+        System.out.println("Selecting facility: " + facility);
         Select facilityDropdown = new Select(driver.findElement(facilityDropdownBy));
         facilityDropdown.selectByVisibleText(facility);
     }
 
     public void applyForHospitalReadmission(Boolean apply) {
+        System.out.println("Filling Hospital Readmission application with: " + apply);
         if (apply) {
             WebElement applyForHospReadm = driver.findElement(hospitalReadmissionCheckboxBy);
             applyForHospReadm.click();
@@ -32,21 +34,25 @@ public class AppointmentPage {
     }
 
     public void selectHealthCareRadio(String healthcare) {
+        System.out.println("Selecting Health Care: " + healthcare);
         WebElement healthCareRadioBtn = driver.findElement(By.id("radio_program_" + healthcare.toLowerCase()));
         healthCareRadioBtn.click();
     }
 
     public void fillDateInput(String date) {
+        System.out.println("Filling in visit date with: " + date);
         WebElement dateInput = driver.findElement(dateInputBy);
         dateInput.sendKeys(date);
     }
 
     public void fillCommentInput(String comment) {
+        System.out.println("Writing comment: " + comment);
         WebElement commentInput = driver.findElement(commentInputBy);
         commentInput.sendKeys(comment);
     }
 
     public void clickBookAppointmentBtn() {
+        System.out.println("Clicking on Book Appointment button to submit");
         WebElement bookAppointmentBtn = driver.findElement(bookAppointmentBtnBy);
         bookAppointmentBtn.click();
     }

@@ -16,11 +16,14 @@ public class ProfilPage {
     }
 
     public void navigateToProfile() {
+        System.out.println("Opening Menu");
         driver.findElement(menuBtnBy).click();
+        System.out.println("Clicking on Profile");
         driver.findElement(profileMenuItemBy).click();
     }
 
-    public boolean isProfilPageLoaded() {
+    public boolean isLogoutButtonVisible() {
+        System.out.println("Checking if logout button is visible");
         return driver.findElement(logoutButtonBy).isDisplayed();
     }
 
